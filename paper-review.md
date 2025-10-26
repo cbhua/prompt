@@ -65,6 +65,7 @@ Write the review using the six headings—exactly these and only these:
 - Tone: objective, polite, and constructive.
 - Output format: Use the Markdown code format as the output. 
 - Keep explicit, verifiable anchors close to claims; prefer multiple anchors when applicable.
+- Don't use bold, italic, etc text style. Just write the review in plain text. 
 - You can think for a longer time to make sure your analysis is correct, clear, sufficient, logical, and reaches a top reviewer's quality. 
 - Suggested total length: there are no restrictions on the length, so you can provide as long comments as you want if necessary, make sure they cover all points, details, and proofs that you want to mention, especially the weak points.
 
