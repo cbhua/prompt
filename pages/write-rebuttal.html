@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Write the Rebuttal</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="../css/main.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet" type="text/css">
+
+</head>
+
+<body id="page-top" class="index">
+<div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> <b>Menu</b>
+                </button>
+				<div class="navbar-brand">Prompt Collection</div>  
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right navbar-static-top">
+                    <li class="header">
+                        <a href="../index.html">HOME</a>
+                    </li>
+                     <li class="header">
+                        <a href="../about.html">ABOUT</a>
+                    </li>
+ 
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <section class="success">
+       	<div class="container">
+            <div class="row">
+            <div class="col-lg-12">
+                <div class="sec">Write the Rebuttal</div>
+                <br/>
+                <div class="page-main">
+                    <p>
+                    [Role]
+                    <br/>
+                    You are an experienced author for top-tier ML/AI conferences (NeurIPS, ICML, ICLR, etc). Now you are writing the rebuttal response to reviewers' comments by following the given guide, our point to point strategy to the comments, and the reference examples.
+                    <br/>
+                    <br/>
+                    [Guides]
+                    <br/>
+                    <ol>
+                        <li>The target of the rebuttal is to address the comments and provide evidence to support our points, finally result in pushing reviewers to raist their scores.</li>
+                        <li>The rebuttal contents are not only for reviewers, more importantly, they are for the area chair to make a final decision. Our finally target is to show the area chair that we have carefully considered the comments and provided evidence to support our points.</li>
+                        <li>The rebuttal should be written in a point to point manner, addressing each comment one by one.</li>
+                        <li>The language should be in academic style, clean, logical, easy to understand, and structured. Avoid long paragraphs; prefer short, well-structured ones to help area chairs quickly grasp the key points.</li>
+                        <li>The tone should remain professional, confident, and respectful, even when disagreeing with reviewers. Avoid emotional or defensive language.</li>
+                        <li>When possible, reframe criticisms as opportunities to clarify contributions or highlight improvements.</li>
+                        <li>Avoid repeating the same arguments; instead, summarize concisely and focus on new clarifications or evidence.</li>
+                        <li>When quantitative results are discussed, restate them exactly as given in the draft (no rounding or paraphrasing that changes meaning).</li>
+                        <li>Do NOT introduce any new experiments, analyses, or results that are not in the paper or author response draft.</li>
+                        <li>Do NOT add any new claims beyond those in the draft or strategy, even if they sound persuasive.</li>
+                        <li>Do NOT use any emoji, italic, bold, etc, text decoration. Only use plain text.</li>
+                        <li>Do NOT make up references. Strictly follow our draft and strategy to the comments. If we don't add a reference, don't add any reference.</li>
+                        <li>The output should be in Markdown code format.</li>
+                    </ol>
+                    <br/>
+                    [Input]
+                    <br/>
+                    <ul>
+                        <li>Our paper's manuscript draft.</li>
+                        <li>Reviewers' comments.</li>
+                        <li>Our point to point strategy to the comments.</li>
+                    </ul>
+                    <br/>
+                    [Reviewer Comments]
+                    <br/>
+                    The unstructed reviewers' comments copied from the OpenReview page.
+                    <br/>
+                    <div class="answer-block">
+                        <textarea id="answerInput1" class="prompt-textarea" rows="5" placeholder=""></textarea>
+                    </div>
+                    <br/>
+                    [Our Draft]
+                    <br/>
+                    Our point to point strategy to the comments.
+                    <br/>
+                    <div class="answer-block">
+                        <textarea id="answerInput2" class="prompt-textarea" rows="5" placeholder=""></textarea>
+                    </div>
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="copy-actions">
+                    <button id="copyPromptBtn" class="btn btn-success btn-sm">Copy Prompt</button>
+                    <span id="copyStatus" class="copy-status" aria-live="polite"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        2025 Chuanbo Hua | <a href="https://github.com/cbhua/prompt">GitHub</a>
+					</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="../js/jqBootstrapValidation.js"></script>
+    <script src="../js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="../js/freelancer.min.js"></script>
+    
+    <!-- Markdown Template -->
+    <script type="text/template" id="markdownTemplate">[Role]
+
+You are an experienced author for top-tier ML/AI conferences (NeurIPS, ICML, ICLR, etc). Now you are writing the rebuttal response to reviewers' comments by following the given guide, our point to point strategy to the comments, and the reference examples.
+
+[Guides]
+
+1. The target of the rebuttal is to address the comments and provide evidence to support our points, finally result in pushing reviewers to raist their scores. 
+2. The rebuttal contents are not only for reviewers, more importantly, they are for the area chair to make a final decision. Our finally target is to show the area chair that we have carefully considered the comments and provided evidence to support our points.
+3. The rebuttal should be written in a point to point manner, addressing each comment one by one.
+4. The language should be in academic style, clean, logical, easy to understand, and structured. Avoid long paragraphs; prefer short, well-structured ones to help area chairs quickly grasp the key points.
+5. The tone should remain professional, confident, and respectful, even when disagreeing with reviewers. Avoid emotional or defensive language.
+6. When possible, reframe criticisms as opportunities to clarify contributions or highlight improvements.
+7. Avoid repeating the same arguments; instead, summarize concisely and focus on new clarifications or evidence.
+8. When quantitative results are discussed, restate them exactly as given in the draft (no rounding or paraphrasing that changes meaning).
+9. Do NOT introduce any new experiments, analyses, or results that are not in the paper or author response draft.
+9. Do NOT add any new claims beyond those in the draft or strategy, even if they sound persuasive.
+10. Do NOT use any emoji, italic, bold, etc, text decoration. Only use plain text.
+11. Do NOT make up references. Strictly follow our draft and strategy to the comments. If we don't add a reference, don't add any reference. 
+12. The output should be in Markdown code format. 
+
+[Input]
+
+- Our paper's manuscript draft.
+- Reviewers' comments.
+- Our point to point strategy to the comments.
+
+[Reviewer Comments]
+
+The unstructed reviewers' comments copied from the OpenReview page. 
+
+```
+Answer
+```
+
+[Our Draft]
+
+Our point to point strategy to the comments.
+
+```
+Answer
+```
+</script>
+
+    <!-- Prompt Builder JavaScript -->
+    <script src="../js/prompt-builder.js"></script>
+    <script>
+    // Initialize prompt builder for this page
+    PromptBuilder.init({
+        markdownTemplateId: 'markdownTemplate'
+    });
+    </script>
+
+</body>
+
+</html>
+

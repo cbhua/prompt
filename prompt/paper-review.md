@@ -160,5 +160,5 @@ The manuscript was submitted to a previous conference, and it received the follo
 - Suggested total length: as the previous comments are the most precious reference, there are no restrictions on the length, so you can provide as long comments as you want if necessary, make sure they cover all points, details, and proofs that you want to mention, especially the weak points.
 
 ```
-[Previous Review]
+Answer
 ```
