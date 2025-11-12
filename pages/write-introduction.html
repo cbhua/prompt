@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Write the Introduction</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="../css/main.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" type="text/css">
+
+</head>
+
+<body id="page-top" class="index">
+<div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> <b>Menu</b>
+                </button>
+				<div class="navbar-brand">Prompt Collection</div>  
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right navbar-static-top">
+                    <li class="header">
+                        <a href="index.html">HOME</a>
+                    </li>
+                     <li class="header">
+                        <a href="about.html">ABOUT</a>
+                    </li>
+ 
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <section class="success">
+       	<div class="container">
+            <div class="row">
+            <div class="col-lg-12">
+                <div class="sec">Write the Introduction</div>
+                <br/>
+                <div class="page-main">
+                    <p>
+                    [Role]
+                    <br/>
+                    You are an experienced author for top-tier ML/AI conferences (NeurIPS, ICML, ICLR, etc). Write the introduction section for a manuscript by following the given guide, storyline, and reference examples. 
+                    <br/>
+                    <br/>
+                    [Guides]
+                    <br/>
+                    <ol>
+                        <li>A typical ML/AI conference paper's introduction contains ~5 paragraphs.</li>
+                        <li>The introduction contains the overall background, motivation, and high-level description of the proposed method.</li>
+                        <li>All the claims should fit and be related to the core contribution. Do NOT claim anything outside of our contribution.</li>
+                        <li>Focus and present more on our story and contribution-related content. Avoid presenting unrelated and "low information-dense" content.</li>
+                        <li>Avoid including too many technical details; for example, we commonly don't want equations to appear in the introduction.</li>
+                        <li>The language should be in academic style, clean, logical, easy to understand, and structured.</li>
+                        <li>Do NOT use any emoji, italic, bold, etc, text decoration. Only use plain text.</li>
+                        <li>Do NOT make up references. If there is a reference missing, use `\needref{}` as a placeholder. Any used reference should be verifed and listed at the end.</li>
+                        <li>The output should be in LaTeX code format.</li>
+                    </ol>
+                    <br/>
+                    [Story Line]
+                    <br/>
+                    This is the storyline of the proposed paper in the Q&A format. We are answering related questions in order by carefully thinking about the logical connection between each other. Answers to these questions should be carefully considered and important to be written as an introduction. 
+                    <br/>
+                    <br/>
+                    What's the observation from previous works?
+                    <ol>
+                        <li>Review previous papers, and find the phenomenon existing in previous works to support the reason for our work.</li>
+                        <li>This observation itself could be novel, could be a contribution. If no one has summarized similar observations before.</li>
+                        <li>This is important to strengthen the meaning of our work as we are expecting to solve an existing problem instead of making up a problem by ourselves.</li>
+                    </ol>
+                    <div class="answer-block">
+                        <!-- <div class="answer-label">Answer</div> -->
+                        <textarea id="answerInput" class="prompt-textarea" rows="5" placeholder=""></textarea>
+                    </div>
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="copy-actions">
+                    <button id="copyPromptBtn" class="btn btn-success btn-sm">Copy Prompt</button>
+                    <span id="copyStatus" class="copy-status" aria-live="polite"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        2025 Chuanbo Hua | <a href="https://github.com/cbhua/prompt">GitHub</a>
+					</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/freelancer.min.js"></script>
+    <script>
+    (function () {
+        function getPredefinedPromptText() {
+            var container = document.querySelector('.page-main');
+            if (!container) return '';
+            var fullText = container.innerText || '';
+            // Find the position of the Answer label we inserted
+            var marker = 'Answer';
+            var idx = fullText.indexOf(marker);
+            if (idx === -1) {
+                return fullText.trim();
+            }
+            return fullText.slice(0, idx).trim();
+        }
+        function buildPrompt() {
+            var predefined = getPredefinedPromptText();
+            var answer = (document.getElementById('answerInput') || {}).value || '';
+            var parts = [];
+            if (predefined) parts.push(predefined);
+            parts.push('Answer');
+            parts.push(answer.trim());
+            return parts.join('\n').trim();
+        }
+        function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                return navigator.clipboard.writeText(text);
+            }
+            return new Promise(function (resolve, reject) {
+                try {
+                    var ta = document.createElement('textarea');
+                    ta.value = text;
+                    ta.style.position = 'fixed';
+                    ta.style.left = '-9999px';
+                    document.body.appendChild(ta);
+                    ta.focus();
+                    ta.select();
+                    var ok = document.execCommand('copy');
+                    document.body.removeChild(ta);
+                    ok ? resolve() : reject(new Error('execCommand failed'));
+                } catch (e) {
+                    reject(e);
+                }
+            });
+        }
+        function setStatus(msg, isError) {
+            var el = document.getElementById('copyStatus');
+            if (!el) return;
+            el.textContent = msg;
+            el.className = 'copy-status' + (isError ? ' error' : ' success');
+            window.setTimeout(function () { el.textContent = ''; el.className = 'copy-status'; }, 2400);
+        }
+        function onCopyClick() {
+            var content = buildPrompt();
+            if (!content) {
+                setStatus('Nothing to copy.', true);
+                return;
+            }
+            copyToClipboard(content)
+                .then(function () { setStatus('Copied!'); })
+                .catch(function () { setStatus('Copy failed.', true); });
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            var btn = document.getElementById('copyPromptBtn');
+            if (btn) btn.addEventListener('click', onCopyClick);
+        });
+    })();
+    </script>
+
+</body>
+
+</html>
