@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Config MacOS | Prompt Collection</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="../css/main.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet" type="text/css">
+
+</head>
+
+<body id="page-top" class="index">
+<div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> <b>Menu</b>
+                </button>
+				<div class="navbar-brand">Prompt Collection</div>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right navbar-static-top">
+                    <li class="header">
+                        <a href="../index.html">HOME</a>
+                    </li>
+                     <li class="header">
+                        <a href="../about.html">ABOUT</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <section class="success" id="maincontent">
+        <div class="container">
+            <div class="sec">Config MacOS</div>
+            <br/>
+            <div class="page-main setup-content">
+<p>请在这台 MacBook 上配置以下个人偏好。先检查 macOS 版本和当前设置，记录将要修改的原值，保留无关设置。优先使用当前系统支持的设置方式；可以通过命令行或系统设置界面操作。修改后验证实际效果，说明如何恢复。只执行必配项和已勾选的可选项，未勾选项保持原样。</p>
+<h2>必配项</h2>
+<ol start="1">
+<li><strong>Caps Lock 改为 Control</strong>：在“系统设置 → 键盘 → 键盘快捷键 → 修饰键”中，将内置键盘的 Caps Lock 功能设为 Control；原有 Control 仍为 Control，其他修饰键保持原样。这是单向映射，不是交换两个键。检查已连接的外接键盘并应用相同设置，说明修饰键设置可能按键盘分别保存。使用持久设置，不用仅本次登录生效的临时映射。<a href="https://support.apple.com/guide/mac-help/change-the-behavior-of-the-modifier-keys-mchlp1011/mac">Apple 说明</a></li>
+<li><strong>Finder 始终显示隐藏文件和所有扩展名</strong>：持久启用隐藏文件显示，以及 Finder 设置中的“显示所有文件扩展名”。重新打开 Finder 后验证点开头的文件和文件扩展名均可见。<a href="https://support.apple.com/guide/mac-help/show-or-hide-filename-extensions-mchlp2304/mac">扩展名设置</a></li>
+<li><strong>截图保存到下载目录</strong>：将系统截图默认保存位置设为当前用户的 <code>~/Downloads</code>（Finder 中的“下载”目录），不是新建 <code>Download</code> 文件夹。可通过 <code>Cmd+Shift+5 → 选项 → 存储到 → 其他位置</code> 设置。保留其他截图选项，验证新截图实际保存到该目录。<a href="https://support.apple.com/102646">Apple 说明</a></li>
+</ol>
+<h2>可选项</h2>
+<p>以下是候选偏好，并非旧电脑的配置快照。我会按个人习惯修改取值、勾选需要的条目或删除不需要的条目；执行 agent 只应用 <code>[x]</code> 条目。</p>
+<h3>键盘与输入</h3>
+<ul>
+<li>[ ] 按键重复速度设为最快，重复前延迟设为最短。</li>
+<li>[ ] 长按字母时重复输入，关闭长按弹出重音字符菜单；验证编辑器中的 hjkl 连续移动。</li>
+<li>[ ] 关闭自动纠正、自动首字母大写、双空格插入句号，以及智能引号和智能破折号；保留输入法本身的候选功能。</li>
+<li>[ ] F1–F12 默认作为标准功能键，按 Fn 才调整亮度和音量。</li>
+<li>[ ] 输入法只保留 ABC 和简体拼音，使用 <code>Control+Space</code> 切换，检查与终端快捷键是否冲突。</li>
+</ul>
+<h3>Finder</h3>
+<ul>
+<li>[ ] 显示路径栏和状态栏。</li>
+<li>[ ] 默认采用列表视图，排序时文件夹在前。</li>
+<li>[ ] 新 Finder 窗口默认打开个人主目录。</li>
+<li>[ ] 侧边栏加入主目录、Downloads、Documents 和 <code>~/Github</code>（目录存在时）。</li>
+<li>[ ] 搜索默认限定在当前文件夹。</li>
+<li>[ ] 关闭修改扩展名时的确认提示。</li>
+</ul>
+<h3>Dock 与窗口</h3>
+<ul>
+<li>[ ] Dock 自动隐藏，保留默认动画速度。</li>
+<li>[ ] Dock 放在屏幕底部，图标大小设为 40，不启用放大。</li>
+<li>[ ] Dock 不显示最近使用的应用。</li>
+<li>[ ] 关闭根据最近使用情况自动重新排列 Spaces。</li>
+<li>[ ] 关闭 Stage Manager（台前调度）。</li>
+</ul>
+<h3>触控板与鼠标</h3>
+<ul>
+<li>[ ] 开启轻点来点按。</li>
+<li>[ ] 双指点按作为辅助点按（右键）。</li>
+<li>[ ] 在辅助功能中开启触控板“三指拖移”。</li>
+<li>[ ] 触控板保留自然滚动；外接鼠标的滚动方向按实际驱动单独配置。</li>
+</ul>
+<h3>外观、截图与日常使用</h3>
+<ul>
+<li>[ ] 系统外观固定为深色，不随时间自动切换。</li>
+<li>[ ] 截图使用 PNG 格式。</li>
+<li>[ ] 关闭截图后的浮动缩略图，让文件更快落盘。</li>
+<li>[ ] 菜单栏时钟显示日期和星期，使用 24 小时制。</li>
+<li>[ ] 关闭自动亮度和 True Tone，以便查看稳定的屏幕颜色。</li>
+<li>[ ] 电池菜单显示百分比。</li>
+</ul>
+<h2>验证与交付</h2>
+<p>逐项报告已修改、原本符合、无法自动完成的设置，并保留原值供恢复。仅在必要时重新打开 Finder、Dock 或相关应用；需要退出登录或重启时说明，不自动中断当前工作。若缺少界面控制能力或系统要求用户操作，完成其余项目并给出具体操作路径，不把未执行的项目报告为完成。</p>
+            </div>
+            <div class="copy-actions setup-copy-actions">
+                <button id="copyPromptBtn" class="btn btn-success btn-sm" type="button">Copy Prompt</button>
+                <span id="copyStatus" class="copy-status" aria-live="polite"></span>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        2026 Chuanbo Hua | <a href="https://github.com/cbhua/prompt">GitHub</a>
+					</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="../js/jqBootstrapValidation.js"></script>
+    <script src="../js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="../js/freelancer.min.js"></script>
+
+<script type="application/json" id="setupPromptTemplate">"# 配置 macOS\n\n请在这台 MacBook 上配置以下个人偏好。先检查 macOS 版本和当前设置，记录将要修改的原值，保留无关设置。优先使用当前系统支持的设置方式；可以通过命令行或系统设置界面操作。修改后验证实际效果，说明如何恢复。只执行必配项和已勾选的可选项，未勾选项保持原样。\n\n## 必配项\n\n1. **Caps Lock 改为 Control**：在“系统设置 → 键盘 → 键盘快捷键 → 修饰键”中，将内置键盘的 Caps Lock 功能设为 Control；原有 Control 仍为 Control，其他修饰键保持原样。这是单向映射，不是交换两个键。检查已连接的外接键盘并应用相同设置，说明修饰键设置可能按键盘分别保存。使用持久设置，不用仅本次登录生效的临时映射。[Apple 说明](https://support.apple.com/guide/mac-help/change-the-behavior-of-the-modifier-keys-mchlp1011/mac)\n2. **Finder 始终显示隐藏文件和所有扩展名**：持久启用隐藏文件显示，以及 Finder 设置中的“显示所有文件扩展名”。重新打开 Finder 后验证点开头的文件和文件扩展名均可见。[扩展名设置](https://support.apple.com/guide/mac-help/show-or-hide-filename-extensions-mchlp2304/mac)\n3. **截图保存到下载目录**：将系统截图默认保存位置设为当前用户的 `~/Downloads`（Finder 中的“下载”目录），不是新建 `Download` 文件夹。可通过 `Cmd+Shift+5 → 选项 → 存储到 → 其他位置` 设置。保留其他截图选项，验证新截图实际保存到该目录。[Apple 说明](https://support.apple.com/102646)\n\n## 可选项\n\n以下是候选偏好，并非旧电脑的配置快照。我会按个人习惯修改取值、勾选需要的条目或删除不需要的条目；执行 agent 只应用 `[x]` 条目。\n\n### 键盘与输入\n\n- [ ] 按键重复速度设为最快，重复前延迟设为最短。\n- [ ] 长按字母时重复输入，关闭长按弹出重音字符菜单；验证编辑器中的 hjkl 连续移动。\n- [ ] 关闭自动纠正、自动首字母大写、双空格插入句号，以及智能引号和智能破折号；保留输入法本身的候选功能。\n- [ ] F1–F12 默认作为标准功能键，按 Fn 才调整亮度和音量。\n- [ ] 输入法只保留 ABC 和简体拼音，使用 `Control+Space` 切换，检查与终端快捷键是否冲突。\n\n### Finder\n\n- [ ] 显示路径栏和状态栏。\n- [ ] 默认采用列表视图，排序时文件夹在前。\n- [ ] 新 Finder 窗口默认打开个人主目录。\n- [ ] 侧边栏加入主目录、Downloads、Documents 和 `~/Github`（目录存在时）。\n- [ ] 搜索默认限定在当前文件夹。\n- [ ] 关闭修改扩展名时的确认提示。\n\n### Dock 与窗口\n\n- [ ] Dock 自动隐藏，保留默认动画速度。\n- [ ] Dock 放在屏幕底部，图标大小设为 40，不启用放大。\n- [ ] Dock 不显示最近使用的应用。\n- [ ] 关闭根据最近使用情况自动重新排列 Spaces。\n- [ ] 关闭 Stage Manager（台前调度）。\n\n### 触控板与鼠标\n\n- [ ] 开启轻点来点按。\n- [ ] 双指点按作为辅助点按（右键）。\n- [ ] 在辅助功能中开启触控板“三指拖移”。\n- [ ] 触控板保留自然滚动；外接鼠标的滚动方向按实际驱动单独配置。\n\n### 外观、截图与日常使用\n\n- [ ] 系统外观固定为深色，不随时间自动切换。\n- [ ] 截图使用 PNG 格式。\n- [ ] 关闭截图后的浮动缩略图，让文件更快落盘。\n- [ ] 菜单栏时钟显示日期和星期，使用 24 小时制。\n- [ ] 关闭自动亮度和 True Tone，以便查看稳定的屏幕颜色。\n- [ ] 电池菜单显示百分比。\n\n## 验证与交付\n\n逐项报告已修改、原本符合、无法自动完成的设置，并保留原值供恢复。仅在必要时重新打开 Finder、Dock 或相关应用；需要退出登录或重启时说明，不自动中断当前工作。若缺少界面控制能力或系统要求用户操作，完成其余项目并给出具体操作路径，不把未执行的项目报告为完成。\n"</script>
+    <script src="../js/prompt-builder.js"></script>
+    <script src="../js/setup-prompts.js"></script>
+</body>
+</html>

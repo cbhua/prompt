@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Config Ghostty over SSH | Prompt Collection</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="../css/main.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet" type="text/css">
+
+</head>
+
+<body id="page-top" class="index">
+<div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> <b>Menu</b>
+                </button>
+				<div class="navbar-brand">Prompt Collection</div>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right navbar-static-top">
+                    <li class="header">
+                        <a href="../index.html">HOME</a>
+                    </li>
+                     <li class="header">
+                        <a href="../about.html">ABOUT</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <section class="success" id="maincontent">
+        <div class="container">
+            <div class="sec">Config Ghostty over SSH</div>
+            <br/>
+            <div class="page-main setup-content">
+<p>请为指定 SSH 服务器安装 Ghostty 的 terminfo，让远端终端程序正确识别 <code>xterm-ghostty</code>。先确认本地安装了 Ghostty、<code>infocmp</code> 可读取其 terminfo，且远端有 <code>tic</code>。</p>
+<p>将下面的 <code>&lt;server_name&gt;</code> 替换为实际 SSH 主机别名，在运行 Ghostty 的本地电脑执行：</p>
+<pre><code>infocmp -x xterm-ghostty | ssh &lt;server_name&gt; &#x27;mkdir -p ~/.terminfo &amp;&amp; tic -x -o ~/.terminfo -&#x27;</code></pre>
+<p>保留现有 terminfo 条目；若即将覆盖同名条目，先备份。仅安装到远端当前用户的 <code>~/.terminfo</code>，不在纯 SSH 服务器安装 Ghostty GUI，不复制 SSH 私钥或本地配置中的凭据。</p>
+<p>重新连接后，检查远端 <code>echo &quot;$TERM&quot;</code> 和 <code>infocmp -x xterm-ghostty</code>，验证常用终端程序不再报 unknown terminal。说明目标主机、修改位置、验证结果与恢复方法；不要把真实主机地址或凭据写回公共 prompt。</p>
+            </div>
+            <div class="copy-actions setup-copy-actions">
+                <button id="copyPromptBtn" class="btn btn-success btn-sm" type="button">Copy Prompt</button>
+                <span id="copyStatus" class="copy-status" aria-live="polite"></span>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        2026 Chuanbo Hua | <a href="https://github.com/cbhua/prompt">GitHub</a>
+					</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="../js/jqBootstrapValidation.js"></script>
+    <script src="../js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="../js/freelancer.min.js"></script>
+
+<script type="application/json" id="setupPromptTemplate">"# 配置 SSH 服务器的 Ghostty 终端支持\n\n请为指定 SSH 服务器安装 Ghostty 的 terminfo，让远端终端程序正确识别 `xterm-ghostty`。先确认本地安装了 Ghostty、`infocmp` 可读取其 terminfo，且远端有 `tic`。\n\n将下面的 `\u003cserver_name>` 替换为实际 SSH 主机别名，在运行 Ghostty 的本地电脑执行：\n\n```bash\ninfocmp -x xterm-ghostty | ssh \u003cserver_name> 'mkdir -p ~/.terminfo && tic -x -o ~/.terminfo -'\n```\n\n保留现有 terminfo 条目；若即将覆盖同名条目，先备份。仅安装到远端当前用户的 `~/.terminfo`，不在纯 SSH 服务器安装 Ghostty GUI，不复制 SSH 私钥或本地配置中的凭据。\n\n重新连接后，检查远端 `echo \"$TERM\"` 和 `infocmp -x xterm-ghostty`，验证常用终端程序不再报 unknown terminal。说明目标主机、修改位置、验证结果与恢复方法；不要把真实主机地址或凭据写回公共 prompt。\n"</script>
+    <script src="../js/prompt-builder.js"></script>
+    <script src="../js/setup-prompts.js"></script>
+</body>
+</html>

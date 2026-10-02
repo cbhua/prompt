@@ -1,0 +1,98 @@
+[
+  {
+    "topic": "learning",
+    "slug": "write-learning-note",
+    "title": "Write the learning notes",
+    "source": "prompt/learning/write-learning-note.md",
+    "page": "pages/write-learning-note.html",
+    "editable": false
+  },
+  {
+    "topic": "scientific-writing",
+    "slug": "write-introduction",
+    "title": "Write the introduction",
+    "source": "prompt/scientific-writing/write-introduction.md",
+    "page": "pages/write-introduction.html",
+    "editable": false
+  },
+  {
+    "topic": "scientific-writing/rebuttal",
+    "slug": "write-rebuttal",
+    "title": "Write the rebuttal",
+    "source": "prompt/scientific-writing/rebuttal/write-rebuttal.md",
+    "page": "pages/write-rebuttal.html",
+    "editable": false
+  },
+  {
+    "topic": "scientific-writing/rebuttal",
+    "slug": "write-rebuttal-summary",
+    "title": "Write the rebuttal summary",
+    "source": "prompt/scientific-writing/rebuttal/write-rebuttal-summary.md",
+    "page": "pages/write-rebuttal-summary.html",
+    "editable": false
+  },
+  {
+    "topic": "peer-review",
+    "slug": "paper-review",
+    "title": "Write the paper review",
+    "source": "prompt/peer-review/paper-review.md",
+    "page": "pages/paper-review.html",
+    "editable": false
+  },
+  {
+    "topic": "computer-setup/system",
+    "slug": "macos",
+    "title": "配置 macOS",
+    "source": "prompt/computer-setup/system/macos.md",
+    "page": "pages/macos.html",
+    "editable": true
+  },
+  {
+    "topic": "computer-setup/terminal",
+    "slug": "ghostty",
+    "title": "配置 Ghostty",
+    "source": "prompt/computer-setup/terminal/ghostty.md",
+    "page": "pages/ghostty.html",
+    "editable": true
+  },
+  {
+    "topic": "computer-setup/terminal",
+    "slug": "oh-my-zsh",
+    "title": "配置 Oh My Zsh",
+    "source": "prompt/computer-setup/terminal/oh-my-zsh.md",
+    "page": "pages/oh-my-zsh.html",
+    "editable": true
+  },
+  {
+    "topic": "computer-setup/terminal",
+    "slug": "herdr",
+    "title": "配置 Herdr",
+    "source": "prompt/computer-setup/terminal/herdr.md",
+    "page": "pages/herdr.html",
+    "editable": true
+  },
+  {
+    "topic": "computer-setup/editors",
+    "slug": "lazyvim",
+    "title": "配置 LazyVim",
+    "source": "prompt/computer-setup/editors/lazyvim.md",
+    "page": "pages/lazyvim.html",
+    "editable": true
+  },
+  {
+    "topic": "computer-setup/editors",
+    "slug": "vim",
+    "title": "配置备用 Vim",
+    "source": "prompt/computer-setup/editors/vim.md",
+    "page": "pages/vim.html",
+    "editable": true
+  },
+  {
+    "topic": "computer-setup/remote-access",
+    "slug": "ghostty-ssh",
+    "title": "配置 SSH 服务器的 Ghostty 终端支持",
+    "source": "prompt/computer-setup/remote-access/ghostty-ssh.md",
+    "page": "pages/ghostty-ssh.html",
+    "editable": true
+  }
+]

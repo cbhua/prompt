@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Config Herdr | Prompt Collection</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="../css/main.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet" type="text/css">
+
+</head>
+
+<body id="page-top" class="index">
+<div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> <b>Menu</b>
+                </button>
+				<div class="navbar-brand">Prompt Collection</div>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right navbar-static-top">
+                    <li class="header">
+                        <a href="../index.html">HOME</a>
+                    </li>
+                     <li class="header">
+                        <a href="../about.html">ABOUT</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <section class="success" id="maincontent">
+        <div class="container">
+            <div class="sec">Config Herdr</div>
+            <br/>
+            <div class="page-main setup-content">
+<p>请在这台服务器上按以下偏好配置 Herdr。检查系统与已有安装，备份将要修改的配置，保留无关设置。</p>
+<ol start="1">
+<li>按 <a href="https://herdr.dev/agent-guide.md">Herdr 官方指南</a> 安装适合当前系统和架构的最新稳定版，使用 stable 更新通道，不固定历史版本。优先安装到 <code>~/.local/bin</code>，确保交互式 shell 的 PATH 包含该目录，使用当前用户运行。</li>
+<li>将以下配置合并到 <code>~/.config/herdr/config.toml</code>；若设置了 <code>HERDR_CONFIG_PATH</code>，使用实际配置路径：</li>
+</ol>
+<pre><code>onboarding = false
+
+[ui]
+sidebar_collapsed_mode = &quot;compact&quot;
+
+[theme]
+name = &quot;vesper&quot;
+auto_switch = false</code></pre>
+<ol start="3">
+<li>其余使用 Herdr 默认设置，包括快捷键与 shell 行为。侧栏折叠后显示窄状态栏，不强制启动时折叠。 本地终端使用 <code>MapleMono-NF-CN-unhinted</code> 字体版本（包含中文和 Nerd Font 特殊符号）。字体安装并配置在运行 Herdr 客户端的本地电脑上；使用 Ghostty 时确认实际字体 family 名称并设置 <code>font-family</code>，纯 SSH 服务器无需安装字体。</li>
+<li>为已安装的 agent 安装或更新官方状态集成：Codex CLI 使用 <code>herdr integration install codex</code>，Claude Code 使用 <code>herdr integration install claude</code>。保留已有 agent 配置；在 Herdr pane 内运行 <code>codex</code> 或 <code>claude</code>，确认侧栏能识别 agent 并显示状态。无需额外安装其他 agent 的集成。</li>
+<li>已有 Herdr 服务时执行 <code>herdr server reload-config</code>，避免中断现有会话。验证版本、stable 通道、配置加载，以及 <code>herdr integration status</code> 中对应集成的状态；在可用的交互式终端中验证启动、Vesper 主题、侧栏折叠和 detach 后重新连接。</li>
+</ol>
+<p>不迁移 旧电脑的会话、日志、socket、项目路径或密钥，也不额外配置开机自启。交付时简述修改位置和验证结果，并说明用 <code>herdr</code> 启动／连接持久会话、<code>Ctrl+b</code> 后按 <code>q</code> 脱离会话。</p>
+            </div>
+            <div class="copy-actions setup-copy-actions">
+                <button id="copyPromptBtn" class="btn btn-success btn-sm" type="button">Copy Prompt</button>
+                <span id="copyStatus" class="copy-status" aria-live="polite"></span>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        2026 Chuanbo Hua | <a href="https://github.com/cbhua/prompt">GitHub</a>
+					</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="../js/jqBootstrapValidation.js"></script>
+    <script src="../js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="../js/freelancer.min.js"></script>
+
+<script type="application/json" id="setupPromptTemplate">"# 配置 Herdr\n\n请在这台服务器上按以下偏好配置 Herdr。检查系统与已有安装，备份将要修改的配置，保留无关设置。\n\n1. 按 [Herdr 官方指南](https://herdr.dev/agent-guide.md) 安装适合当前系统和架构的最新稳定版，使用 stable 更新通道，不固定历史版本。优先安装到 `~/.local/bin`，确保交互式 shell 的 PATH 包含该目录，使用当前用户运行。\n2. 将以下配置合并到 `~/.config/herdr/config.toml`；若设置了 `HERDR_CONFIG_PATH`，使用实际配置路径：\n\n```toml\nonboarding = false\n\n[ui]\nsidebar_collapsed_mode = \"compact\"\n\n[theme]\nname = \"vesper\"\nauto_switch = false\n```\n\n3. 其余使用 Herdr 默认设置，包括快捷键与 shell 行为。侧栏折叠后显示窄状态栏，不强制启动时折叠。\n   本地终端使用 `MapleMono-NF-CN-unhinted` 字体版本（包含中文和 Nerd Font 特殊符号）。字体安装并配置在运行 Herdr 客户端的本地电脑上；使用 Ghostty 时确认实际字体 family 名称并设置 `font-family`，纯 SSH 服务器无需安装字体。\n4. 为已安装的 agent 安装或更新官方状态集成：Codex CLI 使用 `herdr integration install codex`，Claude Code 使用 `herdr integration install claude`。保留已有 agent 配置；在 Herdr pane 内运行 `codex` 或 `claude`，确认侧栏能识别 agent 并显示状态。无需额外安装其他 agent 的集成。\n5. 已有 Herdr 服务时执行 `herdr server reload-config`，避免中断现有会话。验证版本、stable 通道、配置加载，以及 `herdr integration status` 中对应集成的状态；在可用的交互式终端中验证启动、Vesper 主题、侧栏折叠和 detach 后重新连接。\n\n不迁移 旧电脑的会话、日志、socket、项目路径或密钥，也不额外配置开机自启。交付时简述修改位置和验证结果，并说明用 `herdr` 启动／连接持久会话、`Ctrl+b` 后按 `q` 脱离会话。\n"</script>
+    <script src="../js/prompt-builder.js"></script>
+    <script src="../js/setup-prompts.js"></script>
+</body>
+</html>

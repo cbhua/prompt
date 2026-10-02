@@ -644,4 +644,14 @@
   font-weight: 300;
   color: #999;
 }
-  
+
+/* The home page stays a single, manually arranged list. */
+.catalog-intro { margin: 18px 0; }
+.prompt-catalog { padding-left: 20px; }
+.prompt-catalog li { margin: 14px 0; }
+.setup-copy-actions { margin-top: 20px; padding-bottom: 0; }
+
+.setup-content h2, .setup-content h3 { font-size: 14px; margin: 24px 0 12px; }
+.setup-content pre { color: #333; font-size: 12px; font-weight: normal; }
+.setup-table { overflow-x: auto; }
+.setup-table th, .setup-table td { border: 1px solid #ddd; padding: 8px; }
