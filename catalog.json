@@ -94,5 +94,13 @@
     "source": "prompt/computer-setup/remote-access/ghostty-ssh.md",
     "page": "pages/ghostty-ssh.html",
     "editable": true
+  },
+  {
+    "topic": "computer-setup/remote-access",
+    "slug": "rget",
+    "title": "配置 rget：从剪贴板下载服务器文件",
+    "source": "prompt/computer-setup/remote-access/rget.md",
+    "page": "pages/rget.html",
+    "editable": true
   }
 ]

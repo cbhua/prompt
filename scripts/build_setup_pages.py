@@ -14,6 +14,7 @@ PAGE_TITLES = {
     'lazyvim': 'Config LazyVim',
     'vim': 'Config Vim',
     'ghostty-ssh': 'Config Ghostty over SSH',
+    'rget': 'Config rget',
 }
 
 
