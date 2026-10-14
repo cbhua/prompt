@@ -11,53 +11,56 @@
     max-width: clamp(720px, calc(462.86px + 17.857vw), 920px);
   }
   
+  html {
+    font-size: 100%;
+  }
   body {
-    /* font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
-     font-family: "Lucida Grande","Lucida Sans Unicode", Helvetica, Arial, sans-serif;
+     font-family: "Lucida Grande", "Lucida Sans Unicode", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
       overflow-x: hidden;
-        line-height: 145%;
+        line-height: 1.75;
             height: 100%;
     background-color:#FAF8EC;
         color: #333333;
-                    font-size:12px;
+    font-size: clamp(12px, calc(9.43px + 0.1786vw), 14px);
   
   }
   p {
-    font-size: 12px;
+    font-size: 1em;
+    margin-bottom: 1em;
   }
   p.small {
-    font-size: 12px;
+    font-size: 1em;
   }
   a,
   a:hover,
   a:focus,
   a:active,
   a.active {
-    font-family: "Lucida Grande","Lucida Sans Unicode", Helvetica, Arial, sans-serif;
+    font-family: inherit;
     color: #296FA3;
       font-weight: bold;
   }
   h1,
   h2,
   h3 {
-           font-family: "Lucida Grande","Lucida Sans Unicode", Helvetica, Arial, sans-serif;
+           font-family: inherit;
   /*  text-transform: uppercase; */
-     font-size: 16px;
+     font-size: 1.333em;
             font-weight: bold;
-    line-height: 145%;
+    line-height: 1.4;
   }
   h4 {
-       font-family: "Lucida Grande","Lucida Sans Unicode", Helvetica, Arial, sans-serif;
+       font-family: inherit;
   /*  text-transform: uppercase; */
-     font-size: 14px;
+     font-size: 1.167em;
         font-weight: bold;
   }
   h5 {
-     font-family: "Lucida Grande","Lucida Sans Unicode", Helvetica, Arial, sans-serif;
+     font-family: inherit;
        /*  text-transform: uppercase; */
-          font-size: 12px;
+          font-size: 1em;
           font-weight: bold;
-               line-height: 145%;
+               line-height: 1.5;
   }
   h6
   hr.star-light,
@@ -147,7 +150,8 @@
   }
   .navbar-custom {
     background: #FAF8EC;
-    font-family: "Lucida Grande","Lucida Sans Unicode", Helvetica, Arial, sans-serif;
+    font-family: inherit;
+    font-size: 1em;
   /*  text-transform: uppercase; */
     font-weight: 500;
     border: none;
@@ -316,9 +320,9 @@
   footer .footer-below {
     padding: 25px 0;
     background-color: #FAF8EC;
-        color: #888888;
-           font-size: 11px;
-             line-height: 12px;
+        color: #666666;
+           font-size: 0.917em;
+             line-height: 1.6;
   }
   .btn-outline {
     color: white;
@@ -530,32 +534,32 @@
   }
   
   div.paper-title {
-    font-size: 12px;
+    font-size: 1em;
     font-weight: bold;
     color: #606060
   }
   
   div.pub-year {
-    font-size: 12px;
-    line-height: 145%;
+    font-size: 1em;
+    line-height: 1.5;
     margin-top: 10px;
     font-weight: bold;
     padding-bottom: 6px;
     border-bottom: 1px solid #888888;
   }
-  div.sec {
-    font-size: 14px;
-    line-height: 18px;
+  .sec {
+    font-size: 1.167em;
+    line-height: 1.4;
     font-weight: bold;
-    padding-bottom: 7px;
+    padding-bottom: 0.5em;
     border-bottom: 1px solid #888888;
   }
  
  /* Subpage main content styles */
  .page-main {
-   font-family: 'Fira Code','FiraCode', monospace;
-   line-height: 1.85;
-   letter-spacing: 0.2px;
+   font-family: inherit;
+   line-height: 1.75;
+   overflow-wrap: anywhere;
  }
  .page-main a,
  .page-main h1,
@@ -567,19 +571,19 @@
    font-family: inherit;
  }
  .page-main p {
-   font-size: 13px;
-   margin-top: 8px;
-   margin-bottom: 12px;
+   font-size: 1em;
+   margin-top: 0.5em;
+   margin-bottom: 1em;
  }
  .page-main ol,
  .page-main ul {
-   margin-top: 10px;
-   margin-bottom: 14px;
-   padding-left: 1.25em;
+   margin-top: 0.75em;
+   margin-bottom: 1em;
+   padding-left: 1.5em;
    list-style-position: outside;
  }
  .page-main li {
-   margin: 6px 0;
+   margin: 0.5em 0;
  }
  .page-main li::marker {
    color: #296FA3;
@@ -592,16 +596,16 @@
    margin-bottom: 16px;
  }
  .page-main .answer-label {
-   font-size: 12px;
-   color: #666666;
+   font-size: 1em;
+   color: #595959;
    margin-bottom: 6px;
  }
  .prompt-textarea {
    width: 100%;
    min-height: 180px;
-   padding: 10px 12px;
-   font-family: 'Fira Code','FiraCode', monospace;
-   font-size: 13px;
+   padding: 0.75em 1em;
+   font-family: inherit;
+   font-size: 1em;
    line-height: 1.7;
    color: #333333;
    background: #ffffff;
@@ -629,10 +633,10 @@
    position: relative;
  }
  .copy-status {
-   font-size: 12px;
+   font-size: 1em;
    color: #3a7f3a;
-   min-height: 18px;
-   line-height: 18px;
+   min-height: 1.6em;
+   line-height: 1.6;
    order: -1;
  }
 .copy-status.error {
@@ -641,9 +645,27 @@
 
 /* Page-specific styles for example code blocks */
 .page-main pre {
-  font-size: 11px;
-  font-weight: 300;
-  color: #999;
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 1.65;
+  color: #4b4b4b;
+  padding: 1em;
+  overflow-x: auto;
+  overflow-wrap: normal;
+}
+.page-main code,
+.page-main pre {
+  font-family: 'Fira Code', 'FiraCode', ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+.copy-actions .btn {
+  font-size: 1em;
+  line-height: 1.5;
+  padding: 0.625em 1.25em;
+}
+section a:focus-visible,
+.copy-actions .btn:focus-visible {
+  outline: 2px solid #296fa3;
+  outline-offset: 3px;
 }
 
 /* The home page stays a single, manually arranged list. */
@@ -652,7 +674,8 @@
 .prompt-catalog li { margin: 14px 0; }
 .setup-copy-actions { margin-top: 20px; padding-bottom: 0; }
 
-.setup-content h2, .setup-content h3 { font-size: 14px; margin: 24px 0 12px; }
-.setup-content pre { color: #333; font-size: 12px; font-weight: normal; }
+.setup-content h2 { font-size: 1.333em; margin: 1.75em 0 0.75em; }
+.setup-content h3 { font-size: 1.167em; margin: 1.5em 0 0.625em; }
+.setup-content pre { color: #333; }
 .setup-table { overflow-x: auto; }
 .setup-table th, .setup-table td { border: 1px solid #ddd; padding: 8px; }

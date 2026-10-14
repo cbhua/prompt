@@ -1,6 +1,6 @@
 /* Font gallery: all specimen letterforms live in small, font-free SVGs. */
 .font-gallery { padding-bottom: 48px; }
-.font-gallery h1.sec { margin: 0; font-size: 14px; }
+.font-gallery h1.sec { margin: 0; }
 .font-intro { margin: 18px 0 20px; color: #666; line-height: 1.8; }
 .font-card {
     margin-bottom: 24px;
@@ -18,11 +18,11 @@
     padding: 20px 24px;
     text-align: center;
 }
-.font-card-header h2 { margin: 0; font-size: 19px; font-weight: normal; line-height: 1.4; }
+.font-card-header h2 { margin: 0; font-size: 1.333em; font-weight: normal; line-height: 1.4; }
 .font-specimen { margin: 0; }
 .font-specimen img { display: block; width: 100%; height: auto; }
 .font-gallery a:focus-visible { outline: 2px solid #296fa3; outline-offset: 4px; }
 @media (max-width: 480px) {
     .font-card-header { min-height: 64px; padding: 18px 16px; }
-    .font-card-header h2 { font-size: 17px; }
+    .font-card-header h2 { font-size: 1.167em; }
 }
