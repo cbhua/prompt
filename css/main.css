@@ -7,7 +7,8 @@
  .container {
     margin-right: auto;
     margin-left: auto;
-    max-width: 720px; /* or 950px */
+    /* Keep the current 14-inch layout, then scale gently on wider displays. */
+    max-width: clamp(720px, calc(462.86px + 17.857vw), 920px);
   }
   
   body {
