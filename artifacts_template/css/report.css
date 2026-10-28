@@ -1,0 +1,80 @@
+/* Explicitly requested Claudette adaptations. Original Prompt CSS stays intact.
+   Adjust these values here; typography otherwise follows Prompt. */
+:root {
+  --report-quote-accent: #bb3322; /* Same as Prompt's navbar-brand. */
+  --report-quote-rule: var(--report-quote-accent);
+  --report-table-heading-bg: #f5f4ed;
+  --report-table-radius: 8px;
+  --report-math-size: 1.2em;
+  --report-table-bottom-space: 1.5em;
+}
+
+/* Match the rule under Prompt's .sec (Scientific Writing), without changing
+   the existing H1 typography. */
+.page-main h1 {
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #888888;
+}
+.page-main p[role="math"] {
+  text-align: center;
+  font-size: var(--report-math-size);
+}
+
+.page-main blockquote {
+  position: relative;
+  padding: 0.25em 0 0.25em 1.75em;
+  border-left: 2px solid var(--report-quote-rule);
+  font-family: var(--font-sans);
+  font-style: italic;
+  font-size: 1em;
+}
+.page-main cite {
+  font-size: 1em;
+  font-style: italic;
+  color: inherit;
+}
+.page-main blockquote::before {
+  content: "“";
+  position: absolute;
+  left: 0.5em;
+  top: -0.1em;
+  font-family: var(--font-sans);
+  font-style: italic;
+  font-size: 2em;
+  line-height: 1;
+  color: var(--report-quote-accent);
+  opacity: 0.35;
+}
+.page-main blockquote > :last-child { margin-bottom: 0; }
+.page-main blockquote blockquote { padding-left: 1.25em; }
+.page-main blockquote blockquote::before { content: none; }
+
+/* Table and image captions share the full content width and centered text.
+   Table captions stay outside the scrolling table. */
+.page-main figure > figcaption {
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #777;
+  text-align: center;
+}
+.report-table { margin-bottom: var(--report-table-bottom-space); }
+.report-table table {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #ddd;
+  border-radius: var(--report-table-radius);
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+}
+.report-table .setup-table th,
+.report-table .setup-table td {
+  border: 0;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.report-table tr > :last-child { border-right: 0; }
+.report-table tbody tr:last-child > * { border-bottom: 0; }
+.report-table thead th { background: var(--report-table-heading-bg); }

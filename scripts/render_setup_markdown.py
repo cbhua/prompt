@@ -25,12 +25,16 @@ def render(markdown):
             i += 1
             continue
         if line.startswith('```'):
+            info = line[3:].strip().split()
+            language = info[0].lower() if info else 'plaintext'
+            if not re.fullmatch(r'[a-z0-9_-]+', language):
+                language = 'plaintext'
             code = []
             i += 1
             while i < len(lines) and not lines[i].startswith('```'):
                 code.append(lines[i])
                 i += 1
-            result.append('<pre><code>' + escape('\n'.join(code)) + '</code></pre>')
+            result.append(f'<pre><code class="language-{language}">' + escape('\n'.join(code)) + '</code></pre>')
             i += 1
             continue
         heading = re.match(r'^(#{1,6})\s+(.+)$', line)

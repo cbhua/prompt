@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="个人静态 artifact 模板：以 DeepSeek-V3 报告展示常见技术文档格式。">
+  <title>DeepSeek-V3 · Artifact Template</title>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/font-family.css">
+  <link rel="stylesheet" href="css/template.css">
+  <link rel="stylesheet" href="css/report.css">
+  <link rel="stylesheet" href="css/settings.css">
+  <script src="js/font-preferences.js"></script>
+  <script src="js/code-highlighting.js" defer></script>
+  <script src="js/contents.js" defer></script>
+</head>
+<body>
+  <div id="skipnav"><a href="#maincontent">跳至正文</a></div>
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom" aria-label="页面导航">
+    <div class="container">
+      <div class="navbar-header page-scroll">
+        <div class="navbar-brand">Template</div>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right navbar-static-top">
+          <li class="header"><a class="contents-button" href="#contents-popover" role="button" aria-controls="contents-popover" aria-expanded="false">Contents</a></li>
+        </ul>
+      </div>
+    </div>
+    <ul id="contents-popover" class="dropdown-menu" popover aria-label="章节目录"></ul>
+  </nav>
+
+  <main id="maincontent">
+    <section class="success">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-main setup-content">
+    <div>
+      <h1>DeepSeek-V3 Technical Report</h1>
+      <p>
+        <span>原报告：DeepSeek-AI</span>
+        <span>版本：2025-02-18 / arXiv v2</span>
+        <span><a href="https://arxiv.org/pdf/2412.19437v2">阅读原文 ↗</a></span>
+      </p>
+      <p>这是一份精简的排版参考：保留少量原文短引，搭配摘要、数据和原报告图片，展示一份静态技术文档的常见格式。中文说明为摘要改写；代码为排版示例。</p>
+    </div>
+
+    <div id="overview" aria-labelledby="overview-title">
+      <h2 id="overview-title">1. 模型概览</h2>
+      <p>DeepSeek-V3 是一个 <strong>Mixture-of-Experts（MoE）</strong> 模型，总参数量为 671B，每个 token 激活 37B 参数。报告描述了模型架构、训练基础设施和训练后对齐流程。<sup><a href="#ref-1" aria-label="参考文献 1">[1]</a></sup></p>
+      <blockquote>
+        <p>671B total parameters with 37B activated for each token.</p>
+        <cite>原文短引 · 摘要，第 1 页 <a href="https://arxiv.org/pdf/2412.19437v2#page=1">↗</a></cite>
+      </blockquote>
+      <h3>核心要点</h3>
+      <ul>
+        <li><strong>注意力：</strong>使用 MLA 减少推理中的 KV cache。</li>
+        <li><strong>专家路由：</strong>采用不依赖辅助损失的负载均衡策略。</li>
+        <li><strong>训练目标：</strong>引入多 token 预测。</li>
+      </ul>
+      <p>以上要点依据原报告摘要与第 2 节整理，用于展示正文、强调、无序列表和文献标记。</p>
+    </div>
+
+    <div id="architecture" aria-labelledby="architecture-title">
+      <h2 id="architecture-title">2. 架构与图示</h2>
+      <h3>2.1 Multi-Head Latent Attention</h3>
+      <p>MLA 对注意力的 key 和 value 进行低秩联合压缩，推理时缓存压缩表示。下式展示该过程的第一步。<sup><a href="#ref-1">[1]</a></sup></p>
+      <p class="font-serif" role="math" aria-label="c t 的 KV 分量等于 W DKV 乘以 h t">
+        <span ><i>c</i><sub>t</sub><sup>KV</sup> = <i>W</i><sup>DKV</sup><i>h</i><sub>t</sub></span>
+      </p>
+      <figure>
+        <div>
+          <img class="img-responsive" src="assets/images/deepseek-v3-architecture.png" width="908" height="744" alt="DeepSeek-V3 架构图：左侧为 Transformer 模块，右上为共享与路由专家，右下为 MLA 的压缩和缓存路径。" loading="lazy" decoding="async">
+        </div>
+        <figcaption><strong>图 1.</strong> DeepSeek-V3 的基本架构。图片裁自原报告第 7 页 Figure 2；仅裁去页边、图注和正文，未改动图内内容。<a href="https://arxiv.org/pdf/2412.19437v2#page=7">查看来源 ↗</a></figcaption>
+      </figure>
+      <h3>2.2 阅读顺序</h3>
+      <ol>
+        <li>先看左侧 Transformer 模块中的 Attention 与 Feed-Forward Network。</li>
+        <li>再看右上专家模块中的共享专家、路由专家与 router。</li>
+        <li>最后对照右下 MLA 图，识别推理时需要缓存的表示。</li>
+      </ol>
+    </div>
+
+    <div id="training" aria-labelledby="training-title">
+      <h2 id="training-title">3. 训练与表格</h2>
+      <p>训练语料规模为 14.8T tokens。报告按预训练、上下文扩展和训练后对齐三个阶段列出了 H800 GPU 使用量。<sup><a href="#ref-1">[1]</a></sup></p>
+      <figure class="report-table">
+        <figcaption class="table-caption" id="cost-caption">表 1. 训练成本数据，摘录自原报告第 5 页 Table 1。</figcaption>
+        <div class="setup-table" role="region" aria-labelledby="cost-caption" tabindex="0">
+        <table aria-labelledby="cost-caption">
+          <thead><tr><th scope="col">阶段</th><th scope="col" >H800 GPU 小时</th><th scope="col" >估算费用 / USD</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">预训练</th><td >2,664,000</td><td >$5,328,000</td></tr>
+            <tr><th scope="row">上下文扩展</th><td >119,000</td><td >$238,000</td></tr>
+            <tr><th scope="row">训练后对齐</th><td >5,000</td><td >$10,000</td></tr>
+            <tr ><th scope="row">合计</th><td >2,788,000</td><td >$5,576,000</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </figure>
+      <aside >
+        <p><strong>统计口径。</strong>费用按每 H800 GPU 小时 2 美元估算，仅涵盖正式训练，不包括先前研究和消融实验。<a href="https://arxiv.org/pdf/2412.19437v2#page=5">来源 ↗</a></p>
+      </aside>
+    </div>
+
+    <div id="code" aria-labelledby="code-title">
+      <h2 id="code-title">4. 代码与引用</h2>
+      <p>用 <code>37 / 671</code> 展示行内代码；下面的 Python 仅演示参数比例计算，<strong>不是报告中的官方实现</strong>。</p>
+      <pre><code class="language-python"># Illustrative calculation, not model implementation.
+def activation_ratio(total, active):
+    return active / total
+
+model = {"total": 671, "active": 37}
+ratio = activation_ratio(model["total"], model["active"])
+print(f"Active parameter ratio: {ratio:.2%}")</code></pre>
+      <p>输出约为 <samp>5.51%</samp>；它是参数比例，不代表计算量、吞吐或延迟的同比变化。</p>
+      
+    </div>
+
+    <div id="references" aria-labelledby="references-title">
+      <h2 id="references-title">参考文献</h2>
+      <ol >
+        <li id="ref-1">DeepSeek-AI. <cite>DeepSeek-V3 Technical Report</cite>. arXiv:2412.19437v2, 2025. <a href="https://arxiv.org/abs/2412.19437">摘要</a> · <a href="https://arxiv.org/pdf/2412.19437v2">PDF</a>.</li>
+      </ol>
+    </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

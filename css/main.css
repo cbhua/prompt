@@ -4,6 +4,8 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
+ @import url("fonts.css");
+
  .container {
     margin-right: auto;
     margin-left: auto;
@@ -15,7 +17,7 @@
     font-size: 100%;
   }
   body {
-     font-family: "Lucida Grande", "Lucida Sans Unicode", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+     font-family: var(--font-sans);
       overflow-x: hidden;
         line-height: 1.75;
             height: 100%;
@@ -127,7 +129,7 @@
   }
   header .intro-text .name {
     display: block;
-    font-family: "Lucida Grande","Lucida Sans Unicode", Helvetica, Arial, sans-serif;
+    font-family: inherit;
   /*  text-transform: uppercase; */
     font-weight: 700;
     font-size: 2em;
@@ -648,15 +650,34 @@
   font-size: 1em;
   font-weight: normal;
   line-height: 1.65;
-  color: #4b4b4b;
+  color: #555555;
   padding: 1em;
   overflow-x: auto;
   overflow-wrap: normal;
 }
 .page-main code,
 .page-main pre {
-  font-family: 'Fira Code', 'FiraCode', ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-family: var(--font-mono);
 }
+/* Light syntax colors, keeping the existing code box and Maple Mono typography. */
+.page-main pre code.hljs {
+  display: block;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font-size: inherit;
+  white-space: inherit;
+}
+.hljs-comment, .hljs-quote { color: #626d6b; font-style: italic; }
+.hljs-keyword, .hljs-selector-tag, .hljs-literal { color: #8b3573; }
+.hljs-string, .hljs-regexp, .hljs-addition { color: #286443; }
+.hljs-number, .hljs-symbol, .hljs-bullet { color: #935019; }
+.hljs-title, .hljs-built_in, .hljs-section, .hljs-selector-id { color: #235d91; }
+.hljs-attr, .hljs-attribute, .hljs-variable, .hljs-template-variable { color: #854b20; }
+.hljs-meta, .hljs-type, .hljs-link { color: #6551a0; }
+.hljs-deletion { color: #a12d36; }
+.hljs-emphasis { font-style: italic; }
+.hljs-strong { font-weight: bold; }
 .copy-actions .btn {
   font-size: 1em;
   line-height: 1.5;
@@ -676,6 +697,5 @@ section a:focus-visible,
 
 .setup-content h2 { font-size: 1.333em; margin: 1.75em 0 0.75em; }
 .setup-content h3 { font-size: 1.167em; margin: 1.5em 0 0.625em; }
-.setup-content pre { color: #333; }
 .setup-table { overflow-x: auto; }
 .setup-table th, .setup-table td { border: 1px solid #ddd; padding: 8px; }

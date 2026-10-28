@@ -19,9 +19,9 @@
 
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet" type="text/css">
+    <script src="../js/font-preferences.js"></script>
+
+    <script src="../js/code-highlighting.js" defer></script>
 
 </head>
 
@@ -63,7 +63,7 @@
             <div class="page-main setup-content">
 <p>请为指定 SSH 服务器安装 Ghostty 的 terminfo，让远端终端程序正确识别 <code>xterm-ghostty</code>。先确认本地安装了 Ghostty、<code>infocmp</code> 可读取其 terminfo，且远端有 <code>tic</code>。</p>
 <p>将下面的 <code>&lt;server_name&gt;</code> 替换为实际 SSH 主机别名，在运行 Ghostty 的本地电脑执行：</p>
-<pre><code>infocmp -x xterm-ghostty | ssh &lt;server_name&gt; &#x27;mkdir -p ~/.terminfo &amp;&amp; tic -x -o ~/.terminfo -&#x27;</code></pre>
+<pre><code class="language-bash">infocmp -x xterm-ghostty | ssh &lt;server_name&gt; &#x27;mkdir -p ~/.terminfo &amp;&amp; tic -x -o ~/.terminfo -&#x27;</code></pre>
 <p>保留现有 terminfo 条目；若即将覆盖同名条目，先备份。仅安装到远端当前用户的 <code>~/.terminfo</code>，不在纯 SSH 服务器安装 Ghostty GUI，不复制 SSH 私钥或本地配置中的凭据。</p>
 <p>重新连接后，检查远端 <code>echo &quot;$TERM&quot;</code> 和 <code>infocmp -x xterm-ghostty</code>，验证常用终端程序不再报 unknown terminal。说明目标主机、修改位置、验证结果与恢复方法；不要把真实主机地址或凭据写回公共 prompt。</p>
             </div>

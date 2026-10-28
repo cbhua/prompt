@@ -19,9 +19,9 @@
 
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet" type="text/css">
+    <script src="../js/font-preferences.js"></script>
+
+    <script src="../js/code-highlighting.js" defer></script>
 
 </head>
 
@@ -63,7 +63,7 @@
             <div class="page-main setup-content">
 <p>请在 MacBook 的 <code>~/.zshrc</code> 中添加以下 <code>rget</code> 函数，让 <code>rget &lt;server_name&gt;</code> 读取 macOS 剪贴板中的远端文件绝对路径，通过 <code>scp</code> 下载到本地 <code>~/Downloads/</code>。修改前备份 <code>.zshrc</code>，保留现有配置；若已有 <code>rget</code> 函数，检查并更新，避免重复定义。</p>
 <h2>配置函数</h2>
-<pre><code>rget() {
+<pre><code class="language-zsh">rget() {
     local host=&quot;$1&quot;
     local remote_path=&quot;$(pbpaste)&quot;
 
@@ -83,9 +83,9 @@
 <li>下载完成后，在本地 <code>~/Downloads/</code> 中查看文件。</li>
 </ol>
 <p>例如，在服务器上执行：</p>
-<pre><code>realpath report.pdf</code></pre>
+<pre><code class="language-sh">realpath report.pdf</code></pre>
 <p>假设输出为 <code>/home/user/project/report.pdf</code>，复制该路径后，在 MacBook 上执行（假设 SSH 主机别名为 <code>myserver</code>）：</p>
-<pre><code>rget myserver</code></pre>
+<pre><code class="language-zsh">rget myserver</code></pre>
 <p>文件会保存为 <code>~/Downloads/report.pdf</code>。此函数用于下载单个文件；目标目录中存在同名文件时，<code>scp</code> 会覆盖它。</p>
 <h2>验证与交付</h2>
 <p>检查 <code>rget</code> 已加载，且不传主机参数时会显示 <code>Usage: rget &lt;ssh-host&gt;</code>。使用指定服务器上的一个测试文件验证下载，并确认文件出现在 <code>~/Downloads/</code>。简述修改位置、语法检查和下载验证结果。</p>

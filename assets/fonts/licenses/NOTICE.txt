@@ -1,0 +1,10 @@
+Website font subsets
+
+CMU Serif: converted by Andrey V. Panov from TeX fonts; SIL OFL 1.1 (cmu-serif-OFL.txt).
+Glow Sans: Copyright (c) 2020 Celestial Phineas; Glow Sans (c) 2021 Project Welai; SIL OFL 1.1 (glow-sans-OFL.txt).
+LXGW Neo ZhiSong: Copyright (c) 2023–2026 LXGW; Information-technology Promotion Agency, Japan (IPA), 2003–2019; IPA Font License 1.0 (lxgw-ipa.md). Replacement instructions and source links are in docs/font-subsets.md and on pages/font-family.html.
+Lucida Grande: Copyright (c) 1989 Bigelow & Holmes, Inc. All rights reserved. Lucida is a registered trademark of Bigelow & Holmes Inc. Typefaces designed by Kris Holmes and Charles Bigelow. Proprietary; website embedding authorized by the site owner under their Webfont license. No general redistribution license is granted by this repository.
+
+Maple Mono / Maple Mono NF CN: Copyright 2022 The Maple Mono Project Authors (https://github.com/subframe7536/maple-font); SIL OFL 1.1 (maple-mono-OFL.txt).
+
+Original full fonts are not included. Subset metadata retains source copyright and license records. The repository software license does not supersede these font licenses.

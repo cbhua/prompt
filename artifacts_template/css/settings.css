@@ -1,0 +1,60 @@
+/* 用户手动调整区。所有规则默认留空，避免重复定义或漂移源站默认值。
+   只有用户明确填写的属性才覆盖原始 CSS。 */
+
+/* 页面宽度 */
+.container {
+}
+
+/* 正文字体、字号、字重、行距、文字颜色、背景 */
+body {
+}
+
+/* 段落 */
+.page-main p {
+}
+
+/* 标题；沿用源站 setup-content 的选择器 */
+.page-main h1 {
+}
+.setup-content h2 {
+}
+.setup-content h3 {
+}
+
+/* 列表 */
+.page-main ul,
+.page-main ol {
+}
+.page-main li {
+}
+
+/* 代码块及其基础文字颜色 */
+.page-main pre {
+}
+.page-main code {
+}
+
+/* 表格 */
+.setup-table th,
+.setup-table td {
+}
+
+/* Header；只有明确手动填写时才改变源站样式 */
+.navbar-custom {
+}
+.navbar-custom .navbar-brand {
+}
+.navbar-custom .navbar-nav li a {
+}
+
+/* Contents 弹出层 */
+#contents-popover {
+}
+
+/* 引用、图片和页脚 */
+blockquote {
+}
+.img-responsive {
+}
+footer .footer-below {
+}

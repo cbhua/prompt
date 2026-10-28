@@ -19,9 +19,9 @@
 
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet" type="text/css">
+    <script src="../js/font-preferences.js"></script>
+
+    <script src="../js/code-highlighting.js" defer></script>
 
 </head>
 
@@ -165,7 +165,7 @@
                     <br/>
                     The following is an example review for the famous paper ResNet as a reference:
                     <br/>
-                    <pre># Synopsis of the paper
+                    <pre class="language-markdown"># Synopsis of the paper
 The manuscript introduces a residual learning framework for training very deep convolutional neural networks by reformulating target mappings as residual functions added via identity shortcut connections. It presents architectures up to 152 layers on ImageNet and over 100 layers on CIFAR-10, with bottleneck blocks to control complexity. Empirical evaluations show improved optimization behavior and accuracy compared to plain networks, with state-of-the-art results on ImageNet classification and substantial gains in detection/localization tasks.
 
 # Summary of Review

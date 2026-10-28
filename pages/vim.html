@@ -19,9 +19,9 @@
 
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet" type="text/css">
+    <script src="../js/font-preferences.js"></script>
+
+    <script src="../js/code-highlighting.js" defer></script>
 
 </head>
 
@@ -64,7 +64,7 @@
 <p>请按以下偏好配置 Vim，作为 LazyVim / Neovim 之外的备用编辑器。检查已有环境，备份并合并 <code>~/.vimrc</code>，保留无关设置。安装当前稳定版 Vim（macOS 用 Homebrew，Linux 用系统包管理器），不安装第三方插件，不修改 Neovim 配置或将 <code>vim</code> 别名到 <code>nvim</code>。</p>
 <h2>基础设置</h2>
 <p>在 <code>~/.vimrc</code> 中启用以下配置：</p>
-<pre><code>set nocompatible
+<pre><code class="language-vim">set nocompatible
 filetype plugin indent on
 syntax enable
 set encoding=utf-8
@@ -97,7 +97,7 @@ set splitbelow splitright
 let mapleader=&quot; &quot;
 let maplocalleader=&quot; &quot;</code></pre>
 <p>创建 <code>~/.vim/undo</code>、<code>~/.vim/backup</code>、<code>~/.vim/swap</code>，启用以下设置；不迁移旧机器的历史、备份或 swap 文件：</p>
-<pre><code>if has(&#x27;persistent_undo&#x27;)
+<pre><code class="language-vim">if has(&#x27;persistent_undo&#x27;)
   set undofile
   set undodir=~/.vim/undo//
 endif

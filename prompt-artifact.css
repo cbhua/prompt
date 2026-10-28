@@ -1,0 +1,380 @@
+/*
+ * Prompt Artifact — Typora theme
+ * Visual source: artifacts_template/css/{main,fonts,report}.css + Bootstrap 3.
+ * Install: copy this single file to Typora's themes folder and select Prompt Artifact.
+ * Uses installed FULL fonts, never the website's content-specific subsets.
+ * No network requests, imports, or dependency on this repository's location.
+ * Header navigation belongs to the website; Typora retains its native controls.
+ * See prompt-artifact-theme.md for installation and component mapping.
+ * Original Bootstrap/Freelancer CSS: MIT, Copyright Twitter / Start Bootstrap.
+ */
+
+/* Local font faces: exact PostScript/full names read from the website's originals.
+   Latin and CJK code faces stay separate, so Chinese fonts never supply Latin. */
+@font-face {
+  font-family: "Site Lucida Grande";
+  src: local("LucidaGrande"), local("Lucida Grande");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+0000-2E7F, U+A000-F8FF, U+FB00-FE0F, U+FE50-FF00, U+FF61-1FFFF;
+}
+@font-face {
+  font-family: "Site Lucida Grande";
+  src: local("LucidaGrande-Bold"), local("Lucida Grande Bold");
+  font-weight: 700;
+  font-style: normal;
+  unicode-range: U+0000-2E7F, U+A000-F8FF, U+FB00-FE0F, U+FE50-FF00, U+FF61-1FFFF;
+}
+@font-face {
+  font-family: "Site Lucida Grande";
+  src: local("LucidaGrande-Italic"), local("Lucida Grande Italic");
+  font-weight: 400;
+  font-style: italic;
+  unicode-range: U+0000-2E7F, U+A000-F8FF, U+FB00-FE0F, U+FE50-FF00, U+FF61-1FFFF;
+}
+@font-face {
+  font-family: "Site Lucida Grande";
+  src: local("LucidaGrande-BoldItalic"), local("Lucida Grande Bold Italic");
+  font-weight: 700;
+  font-style: italic;
+  unicode-range: U+0000-2E7F, U+A000-F8FF, U+FB00-FE0F, U+FE50-FF00, U+FF61-1FFFF;
+}
+@font-face {
+  font-family: "Site CMU Serif";
+  src: local("CMUSerif-Roman"), local("CMU Serif Roman");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+0000-2E7F, U+A000-F8FF, U+FB00-FE0F, U+FE50-FF00, U+FF61-1FFFF;
+}
+@font-face {
+  font-family: "Site CMU Serif";
+  src: local("CMUSerif-Bold"), local("CMU Serif Bold");
+  font-weight: 700;
+  font-style: normal;
+  unicode-range: U+0000-2E7F, U+A000-F8FF, U+FB00-FE0F, U+FE50-FF00, U+FF61-1FFFF;
+}
+@font-face {
+  font-family: "Site CMU Serif";
+  src: local("CMUSerif-Italic"), local("CMU Serif Italic");
+  font-weight: 400;
+  font-style: italic;
+  unicode-range: U+0000-2E7F, U+A000-F8FF, U+FB00-FE0F, U+FE50-FF00, U+FF61-1FFFF;
+}
+@font-face {
+  font-family: "Site CMU Serif";
+  src: local("CMUSerif-BoldItalic"), local("CMU Serif BoldItalic");
+  font-weight: 700;
+  font-style: italic;
+  unicode-range: U+0000-2E7F, U+A000-F8FF, U+FB00-FE0F, U+FE50-FF00, U+FF61-1FFFF;
+}
+@font-face {
+  font-family: "Site LXGW Neo ZhiSong";
+  src: local("LXGWNeoZhiSong"), local("LXGW Neo ZhiSong");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+2E80-33FF, U+3400-9FFF, U+F900-FAFF, U+FE10-FE4F, U+FF01-FF60, U+20000-323AF;
+}
+@font-face {
+  font-family: "Site Code Latin";
+  src: local("MapleMono-Regular"), local("Maple Mono Regular");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+0000-2E7F, U+A000-F8FF, U+FB00-FE0F, U+FE50-FF00, U+FF61-1FFFF;
+}
+@font-face {
+  font-family: "Site Code Latin";
+  src: local("MapleMono-Bold"), local("Maple Mono Bold");
+  font-weight: 700;
+  font-style: normal;
+  unicode-range: U+0000-2E7F, U+A000-F8FF, U+FB00-FE0F, U+FE50-FF00, U+FF61-1FFFF;
+}
+@font-face {
+  font-family: "Site Code Latin";
+  src: local("MapleMono-Italic"), local("Maple Mono Italic");
+  font-weight: 400;
+  font-style: italic;
+  unicode-range: U+0000-2E7F, U+A000-F8FF, U+FB00-FE0F, U+FE50-FF00, U+FF61-1FFFF;
+}
+@font-face {
+  font-family: "Site Code Latin";
+  src: local("MapleMono-BoldItalic"), local("Maple Mono Bold Italic");
+  font-weight: 700;
+  font-style: italic;
+  unicode-range: U+0000-2E7F, U+A000-F8FF, U+FB00-FE0F, U+FE50-FF00, U+FF61-1FFFF;
+}
+@font-face {
+  font-family: "Site Code CJK";
+  src: local("MapleMono-NF-CN-Regular"), local("Maple Mono NF CN Regular");
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+2E80-33FF, U+3400-9FFF, U+F900-FAFF, U+FE10-FE4F, U+FF01-FF60, U+20000-323AF;
+}
+@font-face {
+  font-family: "Site Code CJK";
+  src: local("MapleMono-NF-CN-Bold"), local("Maple Mono NF CN Bold");
+  font-weight: 700;
+  font-style: normal;
+  unicode-range: U+2E80-33FF, U+3400-9FFF, U+F900-FAFF, U+FE10-FE4F, U+FF01-FF60, U+20000-323AF;
+}
+
+/* Editable values. Defaults are copied from the current artifact, not enlarged
+   for a different editor theme. Width includes the same 15px side padding. */
+:root {
+  --prompt-body-size: clamp(12px, calc(9.43px + 0.1786vw), 14px);
+  --prompt-page-width: clamp(720px, calc(462.86px + 17.857vw), 920px);
+  --prompt-background: #faf8ec;
+  --prompt-text: #333333;
+  --prompt-link: #296fa3;
+  --prompt-accent: #bb3322;
+  --prompt-table-heading: #f5f4ed;
+  --prompt-table-radius: 8px;
+  --prompt-table-bottom-space: 1.5em;
+  --prompt-math-size: 1.2em;
+  --font-sans: "Site Lucida Grande", "Lucida Grande", "Lucida Sans Unicode", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-serif-zh: "Site LXGW Neo ZhiSong";
+  --font-serif: "Site CMU Serif", var(--font-serif-zh), "CMU Serif", "Songti SC", serif;
+  --font-mono: "Site Code Latin", "Site Code CJK", "Maple Mono", "Maple Mono NF CN", ui-monospace, SFMono-Regular, Consolas, monospace;
+  --monospace: var(--font-mono);
+  /* Typora's documented native UI hooks; no extra sidebar/card theme. */
+  --bg-color: var(--prompt-background);
+  --text-color: var(--prompt-text);
+  --primary-color: var(--prompt-link);
+  --side-bar-bg-color: var(--prompt-background);
+}
+html {
+  font-size: var(--prompt-body-size);
+  font-family: var(--font-sans);
+  background-color: var(--prompt-background);
+  color: var(--prompt-text);
+  -webkit-font-smoothing: auto;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--prompt-text);
+  background-color: var(--prompt-background);
+}
+#write {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--prompt-page-width);
+  margin: 0 auto;
+  padding: 80px 15px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--prompt-text);
+  overflow-wrap: anywhere;
+}
+@media (max-width: 767px) { #write { padding-top: 75px; padding-bottom: 75px; } }
+body.typora-export { padding-left: 0; padding-right: 0; }
+
+/* Headings: Bootstrap margins plus Prompt's setup-content/report overrides. */
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6 {
+  font-family: inherit;
+  color: inherit;
+  padding: 0;
+  border: 0;
+  font-weight: 700;
+  letter-spacing: normal;
+  white-space: normal;
+}
+#write h1 {
+  font-size: 1.333em;
+  line-height: 1.4;
+  margin: 20px 0 10px;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #888888;
+}
+#write h2 { font-size: 1.333em; line-height: 1.4; margin: 1.75em 0 0.75em; }
+#write h3 { font-size: 1.167em; line-height: 1.4; margin: 1.5em 0 0.625em; }
+#write h4 { font-size: 1.167em; line-height: 1.1; margin: 10px 0; }
+#write h5 { font-size: 1em; line-height: 1.5; margin: 10px 0; }
+#write h6 { font-size: 12px; font-weight: 500; line-height: 1.1; margin: 10px 0; }
+#write p { font-size: 1em; line-height: inherit; margin: 0.5em 0 1em; }
+#write strong, #write b { font-weight: 700; }
+#write em, #write i { font-style: italic; }
+#write a, #write a:hover, #write a:focus, #write a:active {
+  font-family: inherit;
+  font-weight: 700;
+  color: var(--prompt-link);
+  text-decoration: none;
+}
+#write a:hover, #write a:focus { text-decoration: underline; }
+#write ul, #write ol {
+  margin: 0.75em 0 1em;
+  padding-left: 1.5em;
+  list-style-position: outside;
+}
+#write li { margin: 0.5em 0; }
+#write li::marker { color: var(--prompt-link); font-weight: 700; }
+#write blockquote {
+  position: relative;
+  margin: 0 0 20px;
+  padding: 0.25em 0 0.25em 1.75em;
+  border: 0;
+  border-left: 2px solid var(--prompt-accent);
+  font-family: var(--font-sans);
+  font-size: 1em;
+  font-style: italic;
+  line-height: inherit;
+  color: inherit;
+}
+/* Neutralize Typora's first-child margin reset: Prompt keeps p's 0.5em. */
+#write blockquote > p { font-size: 1em; margin-top: 0.5em; }
+#write blockquote::before {
+  content: "“";
+  position: absolute;
+  left: 0.5em;
+  top: -0.1em;
+  font-family: var(--font-sans);
+  font-style: italic;
+  font-size: 2em;
+  line-height: 1;
+  color: var(--prompt-accent);
+  opacity: 0.35;
+}
+#write blockquote > :last-child { margin-bottom: 0; }
+#write blockquote blockquote { padding-left: 1.25em; }
+#write blockquote blockquote::before { content: none; }
+#write cite { font-size: 1em; font-style: italic; color: inherit; }
+
+/* Tables keep intrinsic width. Typora wraps native Markdown tables in figure. */
+#write figure { margin: 0; padding: 0; max-width: 100%; }
+#write .setup-table { overflow-x: auto; }
+#write table {
+  width: auto;
+  margin: 0 auto var(--prompt-table-bottom-space);
+  font-family: inherit;
+  font-size: 1em;
+  line-height: inherit;
+  text-align: start;
+  border: 1px solid #ddd;
+  border-radius: var(--prompt-table-radius);
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+}
+#write figure:has(> table), #write .report-table { margin-bottom: var(--prompt-table-bottom-space); }
+#write figure > table, #write .report-table table { margin-bottom: 0; }
+#write th, #write td {
+  padding: 8px;
+  border: 0;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  vertical-align: inherit;
+}
+#write table.md-table td { min-width: 0; }
+#write th { font-weight: 700; text-align: left; }
+#write tr > :last-child { border-right: 0; }
+#write tbody tr:last-child > * { border-bottom: 0; }
+#write thead th { background: var(--prompt-table-heading); }
+#write img { display: block; max-width: 100%; height: auto; border: 0; box-shadow: none; }
+#write figcaption, #write .caption {
+  display: block;
+  width: 100%;
+  font-size: 1em;
+  line-height: inherit;
+  margin: 0;
+  padding: 8px 0;
+  color: #777;
+  text-align: center;
+}
+/* Use an external figcaption/.caption for content-width table captions;
+   an HTML <caption> is necessarily constrained by its own table. */
+
+/* Code: the same Bootstrap frame and original Prompt colors. */
+#write code, #write tt, #write pre, #write .md-fences,
+#write .CodeMirror, #write .CodeMirror pre, #typora-source .CodeMirror {
+  font-family: var(--font-mono);
+}
+#write code, #write tt {
+  text-align: inherit;
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+#write pre, #write .md-fences {
+  display: block;
+  margin: 0 0 10px;
+  padding: 1em;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #555555;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow-wrap: normal;
+}
+#write pre:not(.md-fences) { overflow-x: auto; white-space: pre-wrap; word-break: break-all; }
+#write pre code, #write .md-fences code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  background: transparent;
+  border-radius: 0;
+}
+/* The live CodeMirror editor owns scrolling and cursor geometry. */
+#write .md-fences .CodeMirror { font-size: inherit; line-height: inherit; color: inherit; background: transparent; }
+#write .md-fences .CodeMirror pre {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+  white-space: pre;
+  word-break: normal;
+}
+#write .CodeMirror-lines { padding: 0; }
+#write .CodeMirror-gutters { background: transparent; border: 0; }
+#write .cm-s-inner .cm-comment, #write .hljs-comment, #write .hljs-quote { color: #626d6b; font-style: italic; }
+#write .cm-s-inner .cm-keyword, #write .cm-s-inner .cm-atom,
+#write .hljs-keyword, #write .hljs-literal { color: #8b3573; }
+#write .cm-s-inner .cm-string, #write .cm-s-inner .cm-string-2,
+#write .hljs-string, #write .hljs-regexp { color: #286443; }
+#write .cm-s-inner .cm-number, #write .hljs-number, #write .hljs-symbol { color: #935019; }
+#write .cm-s-inner .cm-def, #write .cm-s-inner .cm-builtin,
+#write .hljs-title, #write .hljs-built_in { color: #235d91; }
+#write .cm-s-inner .cm-property, #write .cm-s-inner .cm-attribute,
+#write .hljs-attr, #write .hljs-variable { color: #854b20; }
+#write .cm-s-inner .cm-meta, #write .cm-s-inner .cm-type,
+#write .hljs-meta, #write .hljs-type { color: #6551a0; }
+#write .cm-s-inner .cm-variable, #write .cm-s-inner .cm-operator { color: #555555; }
+#write .hljs-deletion { color: #a12d36; }
+#write .hljs-emphasis, #write .cm-s-inner .cm-em { font-style: italic; }
+#write .hljs-strong, #write .cm-s-inner .cm-strong { font-weight: 700; }
+
+/* Display math: Typora keeps its MathJax symbol fonts and editing controls. */
+#write .md-math-block, #write p[role="math"] {
+  font-size: var(--prompt-math-size);
+  text-align: center;
+  margin: 0.5em 0 1em;
+}
+#write .mathjax-block { text-align: center; }
+#write .md-math-block .math, #write .md-math-block .mathjax-block { font-size: inherit; }
+#write .md-math-block mjx-container[display="true"] { margin: 0; text-align: center; }
+#write .md-math-block .MathJax_Display { margin: 0; text-align: center; }
+.font-serif, .font-song, .font-cmu-serif { font-family: var(--font-serif); }
+.font-sans, .font-hei { font-family: var(--font-sans); }
+#write hr {
+  border: 0;
+  height: 1px;
+  margin: 20px 0;
+  background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+}
+#write sub, #write sup { position: relative; font-size: 75%; line-height: 0; vertical-align: baseline; }
+#write sup { top: -0.5em; }
+#write sub { bottom: -0.25em; }
+/* User overrides: add only intentional changes below. */

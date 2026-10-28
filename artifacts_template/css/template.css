@@ -1,0 +1,19 @@
+/* Only layout required by the explicitly requested Contents interaction.
+   All typography, colors, borders, shadows and report styles come from main.css
+   and the unmodified Bootstrap CSS. */
+#contents-popover {
+  position: fixed;
+  inset: var(--contents-top, 50px) var(--contents-right, 0px) auto auto;
+  max-width: 100vw;
+  max-height: calc(100vh - var(--contents-top, 50px));
+  overflow: auto;
+}
+#contents-popover:popover-open { display: block; }
+/* Prompt normally collapses its mobile navigation. This artifact must keep
+   its two requested controls visible; typography stays with the source rules. */
+@media (max-width: 767px) {
+  #mainNav .navbar-header { float: left; margin-right: 0; }
+  #mainNav .navbar-collapse { float: right; display: block; border: 0; padding: 0; margin: 0 -15px 0 0; }
+  #mainNav .navbar-nav { margin: 0; }
+  #mainNav .navbar-nav > li > a { padding-top: 15px; padding-bottom: 15px; }
+}

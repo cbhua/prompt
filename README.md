@@ -31,3 +31,7 @@ Enjoy!
 4. 找到你能搞到的任何一个 Agent 或者任何看起来像 Agent 的东西，发过去
 
 玩得开心～
+
+## Website maintenance
+
+After updating website content, rebuild the font subsets with `scripts/build_font_subsets.py`. See [font subset maintenance](docs/font-subsets.md) for local font paths, setup, and commands. The deployment workflow checks that the committed subsets are current.

@@ -4,7 +4,7 @@
 
 ## Specimen assets
 
-The four images in `assets/font-specimens/` contain SVG paths, not SVG text or embedded fonts. Visitors do not need the fonts installed. Each specimen has a fixed viewBox, descriptive title, and the sample sentence in its description and HTML alt text. Cards display only a centered font name and its specimen, without categories, weight labels, or download links. Chinese font names use their Chinese names. The images reserve their dimensions to avoid layout shifts, and the lower images use native lazy loading. No webfont or third-party font request is needed by this page.
+The four images in `assets/font-specimens/` contain SVG paths, not SVG text or embedded fonts. Visitors do not need the fonts installed to view the specimens. Each specimen has a fixed viewBox, descriptive title, and the sample sentence in its description and HTML alt text. Cards display only a centered font name and its specimen, without categories or weight labels. Chinese font names use their Chinese names. The images reserve their dimensions to avoid layout shifts, and the lower images use native lazy loading. Live page text uses the site's self-hosted webfont subsets; see [font-subsets.md](font-subsets.md). Font preferences and notices follow the cards.
 
 These are fixed sample artworks, not reusable font distributions. Original font project/vendor links are recorded below for maintenance.
 
@@ -23,7 +23,7 @@ The helper uses Core Text to shape the sample sentences (including kerning), ver
 - `~/Library/Fonts/LXGWNeoZhiSong.ttf` — LXGW Neo ZhiSong Regular.
 - `~/Library/Fonts/GlowSansSC-Normal-Regular.otf` — Glow Sans SC Normal Regular.
 
-Font files stay on the local computer; only the generated SVG artwork belongs in this repository. Commit regenerated SVGs when changing the samples. GitHub Pages serves the checked-in HTML/CSS/SVG directly and does not run Swift.
+Full font files stay on the local computer. Generated SVG artwork and small WOFF2 subsets belong in this repository. Commit regenerated SVGs when changing the samples, and regenerate the webfont subsets after changing site text. GitHub Pages serves the checked-in HTML/CSS/SVG/WOFF2 directly and does not run Swift.
 
 ## Choosing a format
 

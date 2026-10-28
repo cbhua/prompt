@@ -19,9 +19,9 @@
 
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet" type="text/css">
+    <script src="../js/font-preferences.js"></script>
+
+    <script src="../js/code-highlighting.js" defer></script>
 
 </head>
 
@@ -64,15 +64,15 @@
 <p>请按以下偏好配置 Zsh 环境。检查现有系统，备份将要修改的 <code>.zshrc</code>、<code>.zprofile</code>、<code>.p10k.zsh</code>，合并配置并保留无关设置；重复执行不应重复追加内容。按 <a href="https://github.com/ohmyzsh/ohmyzsh">Oh My Zsh 官方说明</a> 安装 Zsh、Oh My Zsh，并将当前用户的默认 shell 设为 Zsh。</p>
 <h2>工具与插件</h2>
 <p>macOS 使用 Homebrew 安装现代终端工具（使用 fastfetch，不再安装 neofetch）：</p>
-<pre><code>brew install git curl wget tree htop btop ripgrep fd fzf bat eza fastfetch</code></pre>
+<pre><code class="language-sh">brew install git curl wget tree htop btop ripgrep fd fzf bat eza fastfetch</code></pre>
 <p>在加载 Oh My Zsh 前完成 Homebrew <code>shellenv</code> 初始化，按实际安装路径适配 Apple Silicon / Intel，避免重复初始化。Linux 使用系统包管理器安装对应工具，处理 <code>batcat</code>、<code>fdfind</code> 等命令名称差异；不加载 macos 插件，未使用 Homebrew 时也不加载 brew 插件。</p>
 <p>安装两个自定义插件，目录已存在时检查并复用：</p>
-<pre><code>git clone https://github.com/zsh-users/zsh-autosuggestions \
+<pre><code class="language-sh">git clone https://github.com/zsh-users/zsh-autosuggestions \
   &quot;${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions&quot;
 git clone https://github.com/zsh-users/zsh-syntax-highlighting \
   &quot;${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting&quot;</code></pre>
 <p>在 <code>.zshrc</code> 中设置以下插件，再加载 <code>source &quot;$ZSH/oh-my-zsh.sh&quot;</code>。保持语法高亮插件最后加载：</p>
-<pre><code>export ZSH=&quot;$HOME/.oh-my-zsh&quot;
+<pre><code class="language-zsh">export ZSH=&quot;$HOME/.oh-my-zsh&quot;
 ZSH_THEME=&quot;powerlevel10k/powerlevel10k&quot;
 plugins=(
   git macos brew sudo history colored-man-pages command-not-found
@@ -80,7 +80,7 @@ plugins=(
 )</code></pre>
 <p>这些插件提供 Git 别名、macOS 工具、Homebrew 补全、双击 Esc 添加 sudo、历史辅助、彩色 man、缺失命令安装建议、常用目录跳转、统一解压、模糊搜索、历史建议和语法高亮。<code>command-not-found</code> 需检查当前平台的后端支持。</p>
 <h2>额外 <code>.zshrc</code> 设置</h2>
-<pre><code>HISTFILE=&quot;$HOME/.zsh_history&quot;
+<pre><code class="language-zsh">HISTFILE=&quot;$HOME/.zsh_history&quot;
 HISTSIZE=50000
 SAVEHIST=50000
 setopt APPEND_HISTORY SHARE_HISTORY HIST_IGNORE_DUPS HIST_IGNORE_SPACE

@@ -19,9 +19,9 @@
 
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet" type="text/css">
+    <script src="../js/font-preferences.js"></script>
+
+    <script src="../js/code-highlighting.js" defer></script>
 
 </head>
 
@@ -66,7 +66,7 @@
 <li>按 <a href="https://herdr.dev/agent-guide.md">Herdr 官方指南</a> 安装适合当前系统和架构的最新稳定版，使用 stable 更新通道，不固定历史版本。优先安装到 <code>~/.local/bin</code>，确保交互式 shell 的 PATH 包含该目录，使用当前用户运行。</li>
 <li>将以下配置合并到 <code>~/.config/herdr/config.toml</code>；若设置了 <code>HERDR_CONFIG_PATH</code>，使用实际配置路径：</li>
 </ol>
-<pre><code>onboarding = false
+<pre><code class="language-toml">onboarding = false
 
 [ui]
 sidebar_collapsed_mode = &quot;compact&quot;

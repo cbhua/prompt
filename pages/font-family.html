@@ -19,6 +19,10 @@
 
     <link href="../css/font-family.css" rel="stylesheet">
 
+    <script src="../js/font-preferences.js"></script>
+
+    <script src="../js/code-highlighting.js" defer></script>
+
 </head>
 
 <body id="page-top" class="index">
@@ -57,7 +61,7 @@
             <div class="container">
                 <h1 class="sec">Font Family</h1>
                 <p class="font-intro">一些我喜欢的字体。</p>
-                <article class="font-card" id="english-serif" aria-labelledby="english-serif-name">
+                <article class="font-card font-serif" id="english-serif" aria-labelledby="english-serif-name">
                     <header class="font-card-header">
                         <h2 id="english-serif-name">CMU Serif</h2>
                     </header>
@@ -73,7 +77,7 @@
                         <img src="../assets/font-specimens/lucida-grande.svg" width="760" height="160" loading="lazy" decoding="async" alt="Lucida Grande 字样：Education does for the mind, experience does for the soul.">
                     </figure>
                 </article>
-                <article class="font-card" id="chinese-serif" aria-labelledby="chinese-serif-name">
+                <article class="font-card font-serif" id="chinese-serif" aria-labelledby="chinese-serif-name">
                     <header class="font-card-header">
                         <h2 id="chinese-serif-name">霞鹜新致宋</h2>
                     </header>
@@ -89,6 +93,17 @@
                         <img src="../assets/font-specimens/glow-sans.svg" width="760" height="160" loading="lazy" decoding="async" alt="未来荧黑 字样：伟大和平庸消耗的心力相同。">
                     </figure>
                 </article>
+                <details class="font-settings">
+                    <summary>字体设置与许可</summary>
+                    <p><label for="songFontPreference">中文宋体</label>
+                        <select id="songFontPreference">
+                            <option value="lxgw">霞鹜新致宋</option>
+                            <option value="ipa">本机 IPA 明朝原始字体</option>
+                        </select>
+                    </p>
+                    <p>如需使用原始字体，请从 <a href="https://moji.or.jp/ipafont/ipafontdownload/">IPA 官方网站</a>下载并安装 IPAmj 明朝、IPAex 明朝或 IPA 明朝，重启浏览器后选择上面的原始字体选项。该偏好应用于全站的宋体文字；未安装时使用系统衬线字体。样张图片保持原字体。</p>
+                    <p>霞鹜新致宋遵循 <a href="../assets/fonts/licenses/lxgw-ipa.md">IPA Font License 1.0</a>；<a href="../assets/fonts/licenses/glow-sans-OFL.txt">未来荧黑</a>与 <a href="../assets/fonts/licenses/cmu-serif-OFL.txt">CMU Serif</a> 的 OFL 许可随字体子集提供。</p>
+                </details>
             </div>
         </section>
     </main>

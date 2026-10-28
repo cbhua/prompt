@@ -1,0 +1,16 @@
+{
+  "css/main.css": "efb9379e05cf71b9ff2f5f834f98e7845ef8e06c8fe5afece1550c507e8bea3b",
+  "css/font-family.css": "29acacdabb69f5b8dc0c68bceb747ea5850c5aafb401120187636a0ea4099a90",
+  "vendor/bootstrap/css/bootstrap.min.css": "f75e846cc83bd11432f4b1e21a45f31bc85283d11d372f7b19accd1bf6a2635c",
+  "js/font-preferences.js": "1619a8cf9eaf74bd38398bf989488017cfc61861060c6b9a42d2b01a3e75e766",
+  "js/code-highlighting.js": "230453f40ec0b4fbdc57786620cd1419e42f72c1b3bf47f8fce7cc5ef1e0560e",
+  "scripts/build_font_subsets.py": "19ba92a5151a12f178d74cd460a233df84e5890be9c4f84742f8fe437623b874",
+  "scripts/font-sources.json": "46f195230b7281ee9ebcfb28f8f5cecda516fd6601bc0e77809a1c331d2a3c97",
+  "scripts/requirements-fonts.txt": "550671686f5aa9c60ea3ded185c9fc7930573497c4d45f4a9d73fa645cf92977",
+  "vendor/highlight/highlight.min.js": "8ab71eb09c51f501e5e25157d9cff100e46cc29bcbfc744d0b746d451fca7f53",
+  "vendor/highlight/vim.min.js": "5d2bed82834bb73d1a457ea5211f405bf59a0fc1cc150cd24d17dcc7a0e8023b",
+  "vendor/highlight/latex.min.js": "12c8743607535b327bcebd954b0228cf39b7844704123319a7fb594a7db94ce7",
+  "vendor/highlight/LICENSE": "6c081431591d9df696c82dc598fe1423765b8a299b200ed00b281afd0f64c490",
+  "vendor/font-awesome/css/font-awesome.min.css": "008a1d103902f15fdb1c191fcb1ce8954330e7b8de43d09abb08555ba609f420",
+  "vendor/font-awesome/fonts/fontawesome-webfont.woff2": "4e615bd49fcc24c0df0e55c040230483f86688eba1c367c8d21e5337fe465c3f"
+}

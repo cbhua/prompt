@@ -19,9 +19,9 @@
 
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet" type="text/css">
+    <script src="../js/font-preferences.js"></script>
+
+    <script src="../js/code-highlighting.js" defer></script>
 
 </head>
 
@@ -63,7 +63,7 @@
             <div class="page-main setup-content">
 <p>请按以下偏好配置 Ghostty。检查系统和已有安装，备份将要修改的配置，保留无关设置。按官方方式安装当前稳定版 Ghostty 和 <code>Maple Mono NF</code> 字体，不固定历史版本。</p>
 <p>按 <a href="https://ghostty.org/docs/config">官方配置文档</a> 将以下内容合并到 <code>~/.config/ghostty/config.ghostty</code>（设置了 <code>XDG_CONFIG_HOME</code> 时使用对应路径）。macOS 还需检查 <code>~/Library/Application Support/com.mitchellh.ghostty/</code> 下的配置，避免后加载的设置覆盖这些值。</p>
-<pre><code>font-family = Maple Mono NF
+<pre><code class="language-ini">font-family = Maple Mono NF
 font-size = 14
 font-thicken = true
 font-feature = +calt

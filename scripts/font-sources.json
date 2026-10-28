@@ -1,0 +1,19 @@
+{
+  "faces": [
+    {"id": "lucida-grande-regular", "family": "Site Lucida Grande", "group": "latin", "path": "/System/Library/Fonts/LucidaGrande.ttc", "index": 0, "weight": "400", "style": "normal"},
+    {"id": "lucida-grande-bold", "family": "Site Lucida Grande", "group": "latin", "path": "/System/Library/Fonts/LucidaGrande.ttc", "index": 1, "weight": "700", "style": "normal"},
+    {"id": "lucida-grande-italic", "family": "Site Lucida Grande", "group": "latin", "path": "~/Library/Fonts/lucida-grande-italic.otf", "weight": "400", "style": "italic"},
+    {"id": "lucida-grande-bold-italic", "family": "Site Lucida Grande", "group": "latin", "path": "~/Library/Fonts/lucida-grande-bold-italic.otf", "weight": "700", "style": "italic"},
+    {"id": "cmu-serif-regular", "family": "Site CMU Serif", "group": "latin", "path": "~/Library/Fonts/cmunrm.ttf", "weight": "400", "style": "normal"},
+    {"id": "cmu-serif-bold", "family": "Site CMU Serif", "group": "latin", "path": "~/Library/Fonts/cmunbx.ttf", "weight": "700", "style": "normal"},
+    {"id": "cmu-serif-italic", "family": "Site CMU Serif", "group": "latin", "path": "~/Library/Fonts/cmunti.ttf", "weight": "400", "style": "italic"},
+    {"id": "cmu-serif-bold-italic", "family": "Site CMU Serif", "group": "latin", "path": "~/Library/Fonts/cmunbi.ttf", "weight": "700", "style": "italic"},
+    {"id": "lxgw-neo-zhisong", "family": "Site LXGW Neo ZhiSong", "group": "cjk", "path": "~/Library/Fonts/LXGWNeoZhiSong.ttf", "weight": "400", "style": "normal"},
+    {"id": "maple-mono-regular", "family": "Site Code Latin", "group": "latin", "path": "~/Library/Fonts/MapleMono-Regular.ttf", "weight": "400", "style": "normal", "layout_features": ["*"]},
+    {"id": "maple-mono-bold", "family": "Site Code Latin", "group": "latin", "path": "~/Library/Fonts/MapleMono-Bold.ttf", "weight": "700", "style": "normal", "layout_features": ["*"]},
+    {"id": "maple-mono-italic", "family": "Site Code Latin", "group": "latin", "path": "~/Library/Fonts/MapleMono-Italic.ttf", "weight": "400", "style": "italic", "layout_features": ["*"]},
+    {"id": "maple-mono-bold-italic", "family": "Site Code Latin", "group": "latin", "path": "~/Library/Fonts/MapleMono-BoldItalic.ttf", "weight": "700", "style": "italic", "layout_features": ["*"]},
+    {"id": "maple-mono-cn-regular", "family": "Site Code CJK", "group": "cjk", "path": "~/Library/Fonts/MapleMono-NF-CN-Regular.ttf", "weight": "400", "style": "normal", "layout_features": ["*"], "allow_missing": ["U+FF0F"]},
+    {"id": "maple-mono-cn-bold", "family": "Site Code CJK", "group": "cjk", "path": "~/Library/Fonts/MapleMono-NF-CN-Bold.ttf", "weight": "700", "style": "normal", "layout_features": ["*"], "allow_missing": ["U+FF0F"]}
+  ]
+}
