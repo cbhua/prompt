@@ -102,5 +102,13 @@
     "source": "prompt/computer-setup/remote-access/rget.md",
     "page": "pages/rget.html",
     "editable": true
+  },
+  {
+    "topic": "guidances",
+    "slug": "create-artifact",
+    "title": "Create an artifact",
+    "source": "prompt/guidances/create-artifact.md",
+    "page": "pages/create-artifact.html",
+    "editable": false
   }
 ]
